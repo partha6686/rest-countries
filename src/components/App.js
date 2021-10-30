@@ -26,7 +26,7 @@ function App() {
           <Route exact path='/'><Countries setCountry={setCountry} /></Route>
           <Route exact path='/query'><Countries key={final} setCountry={setCountry} /></Route>
           <Route exact path='/region/:regionName'><Countries setCountry={setCountry} /></Route>
-          <Route exact path='/country/:countryName'><CountryInfo country={country} setCountry={setCountry} /></Route>
+          <Route exact path='/country/:countryName'><CountryInfo key={country} country={country} setCountry={setCountry} /></Route>
         </Switch>
       </Router>
     </div>
