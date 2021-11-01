@@ -47,7 +47,7 @@ function CountryInfo(props){
             <div className='country-details'>
                 <img src={details && details.flags.png} alt={props.country + '-Flag'}/>
                 <div>
-                    <h2>{props.country}</h2>
+                    <h2>{_.has(details,'name') && details.name.common}</h2>
                     <div className='details'>
                         <div>
                             <p><strong>Native Name:</strong> {_.has(details,'name')  && details.name.official}</p>

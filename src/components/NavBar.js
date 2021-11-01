@@ -12,7 +12,7 @@ function NavBar(props){
     }
     return(
         <div className={props.theme==='light'?'nav-bar':'nav-bar nav-bar-dark'}>
-            <h1>Where in the world?</h1>    
+            <a href='/'><h1>Where in the world?</h1></a>  
             <p onClick={handleClick}><FontAwesomeIcon icon={faMoon} /> Dark Mode</p>
         </div>
     )
