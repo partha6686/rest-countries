@@ -26,8 +26,8 @@ function FilterBar(props){
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [region])
     return(
-        <div className='filter-bar'>
-            <div className='custom-search-bar'>
+        <div className={props.theme==='light'?'filter-bar':'filter-bar filter-bar-dark'}>
+            <div className={props.theme==='light'?'custom-search-bar':'custom-search-bar custom-search-bar-dark' }>
                 <Link to={{
                     pathname: "/query",
                     search: "?q=" + query

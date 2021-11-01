@@ -2,11 +2,18 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
 
-function NavBar(){
+function NavBar(props){
+    const handleClick = ()=>{
+        if(props.theme === 'light' ){
+            props.setTheme('dark');
+        }else{
+            props.setTheme('light');
+        }
+    }
     return(
-        <div className='nav-bar'>
+        <div className={props.theme==='light'?'nav-bar':'nav-bar nav-bar-dark'}>
             <h1>Where in the world?</h1>    
-            <a href="/" ><FontAwesomeIcon icon={faMoon} /> Dark Mode</a>
+            <p onClick={handleClick}><FontAwesomeIcon icon={faMoon} /> Dark Mode</p>
         </div>
     )
 }

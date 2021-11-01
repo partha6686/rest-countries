@@ -11,6 +11,7 @@ function Countries(props){
     const [countries, setCountries] = useState();
     const getCountries = async () => {
         let URL;
+        props.setProgress(30);
         if(query.get("q")){
             URL = `https://restcountries.com/v3.1/name/${query.get("q")}`;
         }else if(regionName){
@@ -19,8 +20,11 @@ function Countries(props){
             URL = 'https://restcountries.com/v3.1/all';
         }
         let data = await fetch(URL);
+        props.setProgress(50);
         let parseData = await data.json();
+        props.setProgress(70);
         setCountries(parseData);
+        props.setProgress(100);
     }
     const showInfo = (c)=>{
         props.setCountry(c.name.common);
@@ -32,7 +36,7 @@ function Countries(props){
     return(
         <div className='countries'>
             {countries && countries.map((country)=>(
-                <div className='country-card' key={country.name.common} onClick={()=>(showInfo(country))}>
+                <div key={country.name.common} className={props.theme==='light'?'country-card':'country-card country-card-dark'} onClick={()=>(showInfo(country))}>
                     <CountryCard country={country} />
                 </div>
             ))};
