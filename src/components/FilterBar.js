@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function FilterBar(props) {
   const [query, setQuery] = useState("");
